@@ -12,6 +12,9 @@ import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.factory.ModelFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.adobe.aem.guides.wknd.core.models.Byline;
 import com.adobe.cq.wcm.core.components.models.Image;
 
@@ -37,15 +40,17 @@ public class BylineImpl implements Byline {
     private List<String> occupations;
 
     private Image image;
+    private static final Logger LOG = LoggerFactory.getLogger(BylineImpl.class);
 
     /**
-    * @PostConstruct is immediately called after the class has been initialized
+    * PostConstruct is immediately called after the class has been initialized
     * but BEFORE any of the other public methods.
     * It is a good method to initialize variables that is used by methods in the rest of the model
     *
     */
     @PostConstruct
     private void init() {
+        LOG.info("==================LOG MESSAGE+++++++++++++++++++++++");
         // set the image object
         image = modelFactory.getModelFromWrappedRequest(request, request.getResource(), Image.class);
     }
