@@ -3,4 +3,4 @@
     jcr:description="description it is"
     jcr:primaryType="cq:Component"
     jcr:title="TryItOut"
-    componentGroup="It's a new Group"/>
+    componentGroup="WKND Sites Project - Content"/>
