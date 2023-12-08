@@ -26,5 +26,9 @@ public class DemoServiceImpl implements DemoService {
         LOG.info("==============INSIDE DeACTIVATE");
     }
 
+    @Override
+    public void doSomething() {
+        LOG.info("======DOING SOMETHING============");
+    }
 
 }

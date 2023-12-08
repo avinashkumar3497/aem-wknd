@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.adobe.aem.guides.wknd.core.models.Byline;
+import com.adobe.aem.guides.wknd.core.services.DemoService;
 import com.adobe.cq.wcm.core.components.models.Image;
 
 @Model(
@@ -29,6 +30,9 @@ public class BylineImpl implements Byline {
 
     @Self
     private SlingHttpServletRequest request;
+
+    @OSGiService
+    private DemoService demoService;
 
     @OSGiService
     private ModelFactory modelFactory;
@@ -53,6 +57,7 @@ public class BylineImpl implements Byline {
         LOG.info("==================LOG MESSAGE+++++++++++++++++++++++");
         // set the image object
         image = modelFactory.getModelFromWrappedRequest(request, request.getResource(), Image.class);
+        demoService.doSomething();
     }
 
     @Override
