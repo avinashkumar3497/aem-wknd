@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
 import com.adobe.aem.guides.wknd.core.services.DemoService;
 
 @Component(service = DemoService.class, immediate = true)
-@ServiceRanking(2)
-public class DemoServiceImpl implements DemoService {
+@ServiceRanking(1)
+public class DemoServiceImplCopy implements DemoService {
 
 
     private static final Logger LOG = LoggerFactory.getLogger(DemoServiceImpl.class);
@@ -31,7 +31,7 @@ public class DemoServiceImpl implements DemoService {
     @Override
     public String doSomething() {
         LOG.info("======DOING SOMETHING============");
-        return "Returning from the implementation DemoServiceImpl";
+        return "Returning from the implementation DemoServiceImplCopy";
     }
 
 }
