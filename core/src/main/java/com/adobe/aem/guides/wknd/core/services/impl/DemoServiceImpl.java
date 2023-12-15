@@ -6,6 +6,7 @@ import java.util.List;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
@@ -18,25 +19,24 @@ import org.slf4j.LoggerFactory;
 import com.adobe.aem.guides.wknd.core.config.DemoConfig;
 import com.adobe.aem.guides.wknd.core.services.DemoService;
 
-@Component(service = DemoService.class, immediate = true)
+@Component(service = DemoService.class, configurationPolicy = ConfigurationPolicy.REQUIRE)
 @Designate(ocd = com.adobe.aem.guides.wknd.core.config.DemoConfig.class, factory = true)
-@ServiceRanking(2)
 public class DemoServiceImpl implements DemoService {
 
 
     private static final Logger LOG = LoggerFactory.getLogger(DemoServiceImpl.class);
-    private String someSetting;
-    private List<DemoConfig> configList;
+    private String someSetting="default value of someSetting variable in the DemoServiceImpl class";
+    private List<DemoService> configList;
     
     @Activate
-    public void activate(ComponentContext componentContext){
+    public void activate(ComponentContext componentContext, DemoConfig config){
         LOG.info("==============INSIDE ACTIVATE");
         LOG.info("\n {} = {} ",componentContext.getBundleContext().getBundle().getBundleId(),componentContext.getBundleContext().getBundle().getSymbolicName());
-        someSetting="\n"+configList.get(0).someSetting()+"\n"+configList.get(1).someSetting();
+        //someSetting=config.someSetting();
     }
 
-    @Reference(service = DemoConfig.class, cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC)
-    public void bindOSGiFactoryConfig(final DemoConfig config)
+    @Reference(service = DemoService.class, cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC)
+    public void bindDemoService(final DemoService config)
     {
         if(configList == null){
             configList = new ArrayList<>();
@@ -44,7 +44,7 @@ public class DemoServiceImpl implements DemoService {
         configList.add(config);
     }
 
-    public void unbindOSGiFactoryConfig(final DemoConfig config)
+    public void unbindDemoService(final DemoService config)
     {
         configList.remove(config);
     }
@@ -57,9 +57,8 @@ public class DemoServiceImpl implements DemoService {
     @Override
     public String doSomething() {
         LOG.info("======DOING SOMETHING============");
-        return "Returning from the implementation DemoServiceImpl.\nValue(s) of the OSGi Config somesetting : \n\n\n\nHi";
+        someSetting = configList.get(0).toString();
+        return "Returning from the implementation DemoServiceImpl. Value of the OSGi Config some setting : "+someSetting;
     }
-
-     
 
 }
