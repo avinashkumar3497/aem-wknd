@@ -7,4 +7,5 @@ public interface DemoService {
     public String doSomething();
     public List<DemoService> getAllService();
     public String getSomeSetting();
+    public List<DemoService> getAllConfigs();
 }

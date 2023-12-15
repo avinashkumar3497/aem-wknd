@@ -3,4 +3,8 @@
     <h1>${model.returnSomething}</h1>
     <h2>Config instances of DemoService: ${model.configValues}</h2>
 </div>
+<div data-sly-list="${model.getAllConfigss}">
+     ------Config # <b>${itemList.count}</b>-----
+    <div><p> some setting : <b>${item.getSomeSetting}</b></p></div>
+</div>
 ==I'M THE END==

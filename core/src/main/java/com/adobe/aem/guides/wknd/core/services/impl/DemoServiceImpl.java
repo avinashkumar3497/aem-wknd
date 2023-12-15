@@ -70,4 +70,8 @@ public class DemoServiceImpl implements DemoService {
     public List<DemoService> getAllService(){
         return demoServiceList;
     }
+    @Override
+    public List<DemoService> getAllConfigs(){
+        return demoServiceList;
+    }
 }

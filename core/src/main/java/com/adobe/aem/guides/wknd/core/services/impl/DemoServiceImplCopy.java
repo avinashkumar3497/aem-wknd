@@ -47,5 +47,11 @@ public class DemoServiceImplCopy implements DemoService {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getSomeSetting'");
     }
+
+    @Override
+    public List<DemoService> getAllConfigs() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllConfigs'");
+    }
     
 }

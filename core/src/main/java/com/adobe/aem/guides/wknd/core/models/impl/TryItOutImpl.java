@@ -1,5 +1,7 @@
 package com.adobe.aem.guides.wknd.core.models.impl;
 
+import java.util.List;
+
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -33,4 +35,8 @@ public class TryItOutImpl implements TryItOut {
        }
        return demoServiceConfigValues;
     }  
+
+    public List<DemoService> getAllConfigss(){
+        return demoService.getAllConfigs();
+    }
 }
