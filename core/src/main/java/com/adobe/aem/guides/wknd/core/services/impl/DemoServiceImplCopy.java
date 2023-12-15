@@ -39,19 +39,19 @@ public class DemoServiceImplCopy implements DemoService {
     @Override
     public List<DemoService> getAllService() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllService'");
+        throw new UnsupportedOperationException("u reached ..ImplCopy. Unimplemented method 'getAllService'");
     }
 
     @Override
     public String getSomeSetting() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getSomeSetting'");
+        throw new UnsupportedOperationException("u reached ..ImplCopy. Unimplemented method 'getSomeSetting'");
     }
 
     @Override
     public List<DemoService> getAllConfigs() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllConfigs'");
+        throw new UnsupportedOperationException("u reached ..ImplCopy. Unimplemented method 'getAllConfigs'");
     }
     
 }

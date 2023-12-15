@@ -29,10 +29,16 @@ public class TryItOutImpl implements TryItOut {
 
     @Override
     public String configValues() {
-       for(int i=0; i<2 ; i++){
-        String smString= demoService.getAllService().get(i).getSomeSetting();
-            demoServiceConfigValues = demoServiceConfigValues.concat(smString+"|||");
-       }
+        for(int i=0; i<demoService.getAllService().size() ; i++){
+            try{
+                String smString= demoService.getAllService().get(i).getSomeSetting();
+                    demoServiceConfigValues = demoServiceConfigValues.concat(smString+"|||");
+            }
+            catch(Exception e)
+            {
+                demoServiceConfigValues = demoServiceConfigValues.concat(e.getMessage()+"|||");
+            }
+        }
        return demoServiceConfigValues;
     }  
 
