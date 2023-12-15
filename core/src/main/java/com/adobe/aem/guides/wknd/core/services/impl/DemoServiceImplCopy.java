@@ -1,5 +1,7 @@
 package com.adobe.aem.guides.wknd.core.services.impl;
 
+import java.util.List;
+
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -34,4 +36,16 @@ public class DemoServiceImplCopy implements DemoService {
         return "Returning from the implementation DemoServiceImplCopy";
     }
 
+    @Override
+    public List<DemoService> getAllService() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllService'");
+    }
+
+    @Override
+    public String getSomeSetting() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getSomeSetting'");
+    }
+    
 }

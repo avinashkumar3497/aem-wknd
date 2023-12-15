@@ -18,10 +18,19 @@ public class TryItOutImpl implements TryItOut {
 
     @OSGiService
     private DemoService demoService;
+    private String demoServiceConfigValues="|||";
     
     @Override
     public String returnSomething() {
         return demoService.doSomething();
     }
-    
+
+    @Override
+    public String configValues() {
+       for(int i=0; i<2 ; i++){
+        String smString= demoService.getAllService().get(i).getSomeSetting();
+            demoServiceConfigValues = demoServiceConfigValues.concat(smString+"|||");
+       }
+       return demoServiceConfigValues;
+    }  
 }
