@@ -1,189 +1,264 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2023-12-01T13:41:31.238+05:30"
+        cq:lastModified="{Date}2020-09-30T17:38:07.201-07:00"
         cq:lastModifiedBy="admin"
-        cq:template="/conf/wknd/settings/wcm/templates/article-page"
+        cq:lastRolledout="{Date}2020-09-30T17:38:21.132-07:00"
+        cq:lastRolledoutBy="admin"
+        cq:tags="[]"
+        cq:template="/conf/wknd/settings/wcm/templates/article-page-template"
+        jcr:description="Breaking down the top skate destinations in all of Los Angeles. You don't want to miss this!"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:LiveRelationship,mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="The ultimate guide to la skate parks"
+        jcr:title="Ultimate Guide to LA Skateparks"
+        jcr:uuid="ea1e8290-91c8-4417-956b-14717b0f4127"
         sling:resourceType="wknd/components/page"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
-        pwaOrientation="any">
+        pwaOrientation="any"
+        socialMedia="[facebook,pinterest]">
         <root
+            cq:lastRolledout="{Date}2020-09-30T17:38:06.976-07:00"
+            cq:lastRolledoutBy="admin"
+            jcr:mixinTypes="[cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="wknd/components/container"
-            layout="responsiveGrid">
+            sling:resourceType="wknd/components/container">
             <container
-                jcr:lastModified="{Date}2023-11-08T18:12:38.066+05:30"
+                cq:lastRolledout="{Date}2020-09-30T17:38:06.989-07:00"
+                cq:lastRolledoutBy="admin"
+                cq:styleIds="[1554340406437]"
+                jcr:lastModified="{Date}2020-09-30T17:38:06.978-07:00"
                 jcr:lastModifiedBy="admin"
+                jcr:mixinTypes="[cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="wknd/components/container"
-                layout="responsiveGrid">
+                sling:resourceType="wknd/components/container">
                 <image
-                    jcr:lastModified="{Date}2023-11-08T18:44:58.670+05:30"
+                    cq:lastRolledout="{Date}2020-09-30T17:38:06.996-07:00"
+                    cq:lastRolledoutBy="admin"
+                    jcr:lastModified="{Date}2020-09-30T17:38:06.993-07:00"
                     jcr:lastModifiedBy="admin"
+                    jcr:mixinTypes="[cq:LiveRelationship]"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wknd/components/image"
-                    fileReference="/content/dam/wknd/en/magazine/la-skateparks/article_01_hero.png"
-                    imageFromPageImage="false"/>
+                    fileReference="/content/dam/wknd-shared/en/magazine/la-skateparks/article_01_hero.png"/>
                 <container
-                    jcr:lastModified="{Date}2023-11-08T18:14:39.409+05:30"
+                    cq:lastRolledout="{Date}2020-09-30T17:38:07.010-07:00"
+                    cq:lastRolledoutBy="admin"
+                    jcr:lastModified="{Date}2020-09-30T17:38:06.998-07:00"
                     jcr:lastModifiedBy="admin"
+                    jcr:mixinTypes="[cq:LiveRelationship]"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wknd/components/container">
                     <title
-                        jcr:lastModified="{Date}2023-11-08T18:23:29.882+05:30"
+                        cq:lastRolledout="{Date}2020-09-30T17:38:07.019-07:00"
+                        cq:lastRolledoutBy="admin"
+                        jcr:lastModified="{Date}2020-09-30T17:38:07.016-07:00"
                         jcr:lastModifiedBy="admin"
+                        jcr:mixinTypes="[cq:LiveRelationship]"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wknd/components/title"/>
-                    <title_646557808
-                        jcr:lastModified="{Date}2023-11-08T18:45:27.223+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Stacy Rosewells"
                         sling:resourceType="wknd/components/title"
-                        linkTarget="_self"
-                        type="h4"/>
-                    <text
-                        jcr:lastModified="{Date}2023-11-08T18:45:41.848+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wknd/components/text"
-                        text="&lt;p>sakfuhersoilvb ear&lt;/p>&#xd;&#xa;&lt;p>vbiner&lt;/p>&#xd;&#xa;&lt;p>bareartbsrynryt hy5 hrthrr&lt;/p>&#xd;&#xa;&lt;p>hsrstrkp&lt;/p>&#xd;&#xa;&lt;p>sr [prt gbdbrd&lt;/p>&#xd;&#xa;"
-                        textIsRich="true"/>
-                    <text_1815400232
-                        jcr:lastModified="{Date}2023-11-08T18:47:12.991+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wknd/components/text"
-                        text="&lt;blockquote>&amp;quot;skjcbisdkbvisk isdh iuskvi skvs&amp;quot;&lt;/blockquote>&#xd;&#xa;&lt;p>-swosibci&lt;/p>&#xd;&#xa;"
-                        textIsRich="true"/>
-                    <title_332724234
-                        jcr:lastModified="{Date}2023-11-08T18:47:42.548+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Venice Beacj"
-                        sling:resourceType="wknd/components/title"
-                        linkTarget="_self"
                         type="h1"/>
-                    <image
-                        jcr:lastModified="{Date}2023-11-08T18:47:46.337+05:30"
+                    <title_875115054
+                        cq:lastRolledout="{Date}2020-09-30T17:38:07.024-07:00"
+                        cq:lastRolledoutBy="admin"
+                        jcr:lastModified="{Date}2020-09-30T17:38:07.021-07:00"
                         jcr:lastModifiedBy="admin"
+                        jcr:mixinTypes="[cq:LiveRelationship]"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wknd/components/image"
-                        fileReference="/content/dam/wknd/en/magazine/la-skateparks/article_01_picture_01.png"
-                        imageFromPageImage="false"/>
-                    <byline
-                        jcr:lastModified="{Date}2023-11-09T21:10:18.851+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wknd/components/byline"
-                        fileReference="/content/dam/wknd/en/magazine/la-skateparks/pexels-erva-nur-18152871.jpg"
-                        name="Avinash"
-                        occupations="[Artist,Editor]"/>
-                    <helloworld
-                        jcr:lastModified="{Date}2023-11-22T14:25:16.664+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wknd/components/helloworld"/>
-                    <author_books_1060390948
-                        jcr:lastModified="{Date}2023-11-23T13:49:53.731+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wknd/components/content/author_books"
-                        authorname="Avinash"
-                        books="[Autoraw,hi,hi,rdh,js,ret,]">
-                        <bookdetailswithmap jcr:primaryType="nt:unstructured">
-                            <item0
-                                jcr:primaryType="nt:unstructured"
-                                bookname="bdojsi"
-                                booksubject="wsf"
-                                publishyear="246"/>
-                            <item1
-                                jcr:primaryType="nt:unstructured"
-                                bookname="cfg"
-                                booksubject="s2"
-                                publishyear="35"/>
-                        </bookdetailswithmap>
-                    </author_books_1060390948>
-                    <author_books
-                        jcr:lastModified="{Date}2023-11-24T15:40:48.231+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wknd/components/content/author_books"
-                        authorname="ugkbUG"
-                        books="[ihi,ih,sgd,shf,drg,ge,drgdrhh]"/>
-                    <democomponent_1509685599
-                        jcr:lastModified="{Date}2023-12-01T12:20:01.403+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wknd/components/democomponent"
-                        text="heloooooooooooooo"
-                        title="titli"/>
-                    <democomponent
-                        jcr:lastModified="{Date}2023-12-01T12:37:23.587+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wknd/components/democomponent"/>
-                </container>
-                <container_2057100431
-                    jcr:lastModified="{Date}2023-11-08T18:16:25.673+05:30"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wknd/components/container">
-                    <title
-                        jcr:lastModified="{Date}2023-11-08T18:25:41.829+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Share the story"
+                        jcr:title="By Stacey Roswells"
                         sling:resourceType="wknd/components/title"
-                        linkTarget="_self"
-                        type="h5"/>
-                    <button
-                        jcr:lastModified="{Date}2023-11-08T18:25:54.320+05:30"
+                        type="h4"/>
+                    <contentfragment
+                        cq:lastRolledout="{Date}2020-09-30T17:38:07.043-07:00"
+                        cq:lastRolledoutBy="admin"
+                        jcr:lastModified="{Date}2020-09-30T17:38:07.029-07:00"
                         jcr:lastModifiedBy="admin"
+                        jcr:mixinTypes="[cq:LiveRelationship]"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wknd/components/button"/>
-                    <separator
-                        jcr:lastModified="{Date}2023-11-08T18:26:05.647+05:30"
+                        sling:resourceType="wknd/components/contentfragment"
+                        displayMode="singleText"
+                        elementNames="main"
+                        fragmentPath="/content/dam/wknd-shared/en/magazine/la-skateparks/ultimate-guide-to-la-skateparks"
+                        paragraphScope="all"
+                        text="\0"
+                        variationName="master">
+                        <par1
+                            cq:lastRolledout="{Date}2020-09-30T17:38:07.060-07:00"
+                            cq:lastRolledoutBy="admin"
+                            jcr:mixinTypes="[cq:LiveRelationship]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/components/grid">
+                            <text
+                                cq:lastRolledout="{Date}2020-09-30T17:38:07.070-07:00"
+                                cq:lastRolledoutBy="admin"
+                                cq:styleIds="[1570746601923]"
+                                jcr:lastModified="{Date}2020-09-30T17:38:07.065-07:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:mixinTypes="[cq:LiveRelationship]"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wknd/components/text"
+                                text="&lt;blockquote>&amp;quot;There is no better place to shred then Los Angeles&amp;quot;&lt;/blockquote>&#xd;&#xa;&lt;p>&lt;u>Jacob Wester - Pro Skater&lt;/u>&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
+                            <title
+                                cq:lastRolledout="{Date}2020-09-30T17:38:07.077-07:00"
+                                cq:lastRolledoutBy="admin"
+                                cq:styleIds="[1568996484405]"
+                                jcr:lastModified="{Date}2020-09-30T17:38:07.073-07:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:mixinTypes="[cq:LiveRelationship]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Vans Off the Wall Skatepark"
+                                sling:resourceType="wknd/components/title"
+                                type="h2"/>
+                        </par1>
+                        <par2
+                            cq:lastRolledout="{Date}2020-09-30T17:38:07.081-07:00"
+                            cq:lastRolledoutBy="admin"
+                            jcr:mixinTypes="[cq:LiveRelationship]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/components/grid">
+                            <image_copy
+                                cq:lastRolledout="{Date}2020-09-30T17:38:07.087-07:00"
+                                cq:lastRolledoutBy="admin"
+                                jcr:lastModified="{Date}2020-09-30T17:38:07.085-07:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:mixinTypes="[cq:LiveRelationship]"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wknd/components/image"
+                                fileReference="/content/dam/wknd-shared/en/magazine/la-skateparks/article_01_picture_01.png"/>
+                        </par2>
+                        <par3
+                            cq:lastRolledout="{Date}2020-09-30T17:38:07.089-07:00"
+                            cq:lastRolledoutBy="admin"
+                            jcr:mixinTypes="[cq:LiveRelationship]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/components/grid">
+                            <title
+                                cq:lastRolledout="{Date}2020-09-30T17:38:07.098-07:00"
+                                cq:lastRolledoutBy="admin"
+                                cq:styleIds="[1568996484405]"
+                                jcr:lastModified="{Date}2020-09-30T17:38:07.094-07:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:mixinTypes="[cq:LiveRelationship]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Moorpark skate park"
+                                sling:resourceType="wknd/components/title"
+                                type="h2"/>
+                        </par3>
+                        <par5
+                            cq:lastRolledout="{Date}2020-09-30T17:38:07.107-07:00"
+                            cq:lastRolledoutBy="admin"
+                            jcr:mixinTypes="[cq:LiveRelationship]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/components/grid">
+                            <title
+                                cq:lastRolledout="{Date}2020-09-30T17:38:07.115-07:00"
+                                cq:lastRolledoutBy="admin"
+                                cq:styleIds="[1568996484405]"
+                                jcr:lastModified="{Date}2020-09-30T17:38:07.112-07:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:mixinTypes="[cq:LiveRelationship]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Venice Beach Skatepark"
+                                sling:resourceType="wknd/components/title"
+                                type="h2"/>
+                            <image
+                                cq:lastRolledout="{Date}2020-09-30T17:38:07.120-07:00"
+                                cq:lastRolledoutBy="admin"
+                                jcr:lastModified="{Date}2020-09-30T17:38:07.117-07:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:mixinTypes="[cq:LiveRelationship]"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wknd/components/image"
+                                fileReference="/content/dam/wknd-shared/en/magazine/la-skateparks/robson-hatsukami-morgan-280159.jpg"/>
+                        </par5>
+                    </contentfragment>
+                    <experiencefragment
+                        cq:lastRolledout="{Date}2020-09-30T17:38:07.124-07:00"
+                        cq:lastRolledoutBy="admin"
+                        jcr:lastModified="{Date}2020-09-30T17:38:07.122-07:00"
                         jcr:lastModifiedBy="admin"
+                        jcr:mixinTypes="[cq:LiveRelationship]"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wknd/components/experiencefragment"
+                        fragmentVariationPath="/content/experience-fragments/wknd/language-masters/en/contributors/stacey-roswells/byline"/>
+                </container>
+                <container_223059690
+                    cq:lastRolledout="{Date}2020-09-30T17:38:07.167-07:00"
+                    cq:lastRolledoutBy="admin"
+                    jcr:lastModified="{Date}2020-09-30T17:38:07.126-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:mixinTypes="[cq:LiveRelationship]"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wknd/components/container"
+                    layout="responsiveGrid">
+                    <title
+                        cq:lastRolledout="{Date}2020-09-30T17:38:07.178-07:00"
+                        cq:lastRolledoutBy="admin"
+                        cq:styleIds="[1569449156797,1568996420379,1569448853340]"
+                        jcr:lastModified="{Date}2020-09-30T17:38:07.175-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:mixinTypes="[cq:LiveRelationship]"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="SHARE THIS STORY"
+                        sling:resourceType="wknd/components/title"
+                        type="h5"/>
+                    <sharing
+                        cq:lastRolledout="{Date}2020-09-30T17:38:07.183-07:00"
+                        cq:lastRolledoutBy="admin"
+                        jcr:lastModified="{Date}2020-09-30T17:38:07.180-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:mixinTypes="[cq:LiveRelationship]"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wknd/components/sharing"/>
+                    <separator
+                        cq:lastRolledout="{Date}2020-09-30T17:38:07.187-07:00"
+                        cq:lastRolledoutBy="admin"
+                        cq:styleIds="[1571075919520,1571075910473]"
+                        jcr:lastModified="{Date}2020-09-30T17:38:07.185-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:mixinTypes="[cq:LiveRelationship]"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="wknd/components/separator"/>
                     <download
-                        jcr:lastModified="{Date}2023-11-08T18:48:22.596+05:30"
+                        cq:lastRolledout="{Date}2020-09-30T17:38:07.196-07:00"
+                        cq:lastRolledoutBy="admin"
+                        jcr:description="&lt;p>Get the Full Story&lt;/p>&#xd;&#xa;"
+                        jcr:lastModified="{Date}2020-09-30T17:38:07.190-07:00"
                         jcr:lastModifiedBy="admin"
+                        jcr:mixinTypes="[cq:LiveRelationship]"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Download PDF"
                         sling:resourceType="wknd/components/download"
+                        actionText="Download PDF"
                         descriptionFromAsset="false"
-                        fileReference="/content/dam/wknd/en/magazine/la-skateparks/UltimateGuidetoLASkateParks.pdf"
+                        fileReference="/content/dam/wknd-shared/en/magazine/la-skateparks/ultimateguidetolaskateparks.pdf"
                         inline="false"
                         textIsRich="true"
                         titleFromAsset="false"/>
                     <list
-                        jcr:lastModified="{Date}2023-11-08T18:49:47.010+05:30"
+                        cq:lastRolledout="{Date}2020-09-30T17:38:07.203-07:00"
+                        cq:lastRolledoutBy="admin"
+                        cq:styleIds="[1554340350631]"
+                        jcr:lastModified="{Date}2020-09-30T17:38:07.199-07:00"
                         jcr:lastModifiedBy="admin"
+                        jcr:mixinTypes="[cq:LiveRelationship]"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="wknd/components/list"
                         childDepth="1"
-                        displayItemAsTeaser="false"
                         linkItems="true"
                         listFrom="children"
+                        maxItems="4"
+                        orderBy="modified"
                         parentPage="/content/wknd/us/en/magazine"
                         showDescription="false"
                         showModificationDate="true"
-                        sortOrder="asc"
+                        sortOrder="desc"
                         tagsMatch="any"/>
-                </container_2057100431>
+                </container_223059690>
             </container>
         </root>
-        <cq:featuredimage
-            jcr:lastModified="{Date}2023-11-08T18:27:23.300+05:30"
-            jcr:lastModifiedBy="admin"
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="core/wcm/components/image/v3/image"
-            altValueFromDAM="false"/>
     </jcr:content>
 </jcr:root>
