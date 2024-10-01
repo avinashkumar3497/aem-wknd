@@ -7,5 +7,5 @@
 
 /farms {
 	# Include all *.farm files in enabled_farms
-	$include "enabled_farms/*.farm"
+	$include "farms/*.farm"
 }
