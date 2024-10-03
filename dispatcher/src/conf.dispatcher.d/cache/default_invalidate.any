@@ -12,5 +12,5 @@
 }
 /0002 {
 	/type "allow"
-	/glob "${AEM_IP}"
+	/glob "127.0.0.1"
 }
