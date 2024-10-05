@@ -7,5 +7,7 @@
 
 /farms {
 	# Include all *.farm files in enabled_farms
-	$include "farms/*.farm"
+	#farms are evaluated from bottom to top to match the vhost
+	$include "farms/default.farm"
+	$include "farms/avinash.farm"
 }
