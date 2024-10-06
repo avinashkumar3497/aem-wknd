@@ -3,7 +3,7 @@
 	# Put names of which domains are used for your published site/content here
 	ServerAlias	"www.avinash.local"
 	# Use a document root that matches the one in conf.dispatcher.d/default.farm
-	DocumentRoot "C:/Apache2/htdocs/content/wknd/avinash"
+	DocumentRoot "C:/Apache2/htdocs/content/avinash"
 	# Add header breadcrumbs for help in troubleshooting
 
 #	<Directory />
@@ -29,7 +29,7 @@
 #		# Prevent clickjacking
 #		Header always append X-Frame-Options SAMEORIGIN
 #	</Directory>
-	<Directory "C:/Apache2/htdocs/content/wknd/avinash">
+	<Directory "C:/Apache2/htdocs">
 		AllowOverride None
 		Order allow,deny
 	    Allow from all
