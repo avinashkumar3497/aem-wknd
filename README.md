@@ -2,9 +2,11 @@
 - Install this project only with a AEMAACS SDK. It won't work properly with the AMS quickstart.
 - Install **complete content.zip** package through Package manager so that all functionalities works properly.
 
-# Sample AEM project template
+# AEM project
 
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
+This project is created to document the learing gained as part of the below two sources : 
+- [AEM WKND Tutorial](https://experienceleague.adobe.com/en/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview) :  This tutorial walks through the implementation of an AEM site for a fictitious lifestyle brand, the WKND. The tutorial covers fundamental topics like project setup, Core Components, Editable Templates, Client-side libraries, and component development with Adobe Experience Manager Sites.
+- [AEM Developer Tutorials](https://youtube.com/playlist?list=PLEaEQSM_Y4tmJjQICTFDm2lU5mNmd_Oar&si=C_dthi8PX_kEdmba) : This Youtube playlist contains AEM Developer tutorials. All tutorials contains explanation of topic and a demo using a scenario. It contains beginner to intermediate level of topics.
 
 ## Modules
 
