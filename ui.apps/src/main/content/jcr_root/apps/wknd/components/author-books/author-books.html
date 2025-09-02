@@ -1,0 +1,12 @@
+<div data-sly-use.books="com.adobe.aem.guides.wknd.core.models.AuthorBooks">
+    <h1>${books.authorName} Books</h1>
+    ===================Multifield with single field=============
+    <div data-sly-list.books_in_list="${books.authorBooks}">
+        <p>${books_in_list}</p>
+    </div>
+    
+    <!-- <div data-sly-list.item="${books.authorBooks}">
+         ---------------Book : ${itemList.count}--------------
+        <p> Book : <b>${item} </b></p>
+    </div>
+    <p> ALL Book : <b>${books.authorBooks @ join=', '}</b></p> -->
