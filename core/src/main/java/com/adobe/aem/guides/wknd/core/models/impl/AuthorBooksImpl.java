@@ -9,6 +9,8 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Via;
+import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +27,10 @@ import java.util.*;
 public class AuthorBooksImpl implements AuthorBooks {
     private static final Logger LOG = LoggerFactory.getLogger(AuthorBooksImpl.class);
 
-    @Inject
+    //Replacing @Inject with @Self and @Via to get the component resource
+    //as @Inject was giving null value
+    @Self
+    @Via("resource")
     Resource componentResource;
 
     @ValueMapValue
@@ -50,8 +55,6 @@ public class AuthorBooksImpl implements AuthorBooks {
         }
     }
 
-    //Below function is not working as expected. Please check and update.
-    //Check the error logs
     @Override
     public List<Map<String, String>> getBookDetailsWithMap() {
         List<Map<String, String>> bookDetailsMap=new ArrayList<>();
