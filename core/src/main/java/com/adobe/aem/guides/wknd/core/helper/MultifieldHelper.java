@@ -14,7 +14,7 @@ public class MultifieldHelper {
     private String bookSubject;
     private Date publishDate;
     private int copies;
-    //private List<NastedHalper> bookEditons;
+    private List<NastedHalper> bookEditons;
     public MultifieldHelper(Resource resource){
         try {
             if(StringUtils.isNotBlank(resource.getValueMap().get("bookname", String.class))) {
@@ -52,11 +52,11 @@ public class MultifieldHelper {
         return bookSubject;
     }
 
-    // public List<NastedHalper> getBookEditons() {
-    //     return bookEditons;
-    // }
+    public List<NastedHalper> getBookEditons() {
+        return bookEditons;
+    }
 
-    // public void setBookEditons(List<NastedHalper> bookEditons) {
-    //     this.bookEditons = bookEditons;
-    // }
+    public void setBookEditons(List<NastedHalper> bookEditons) {
+        this.bookEditons = bookEditons;
+    }
 }

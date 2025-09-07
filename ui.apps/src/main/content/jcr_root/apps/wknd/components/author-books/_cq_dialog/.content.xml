@@ -128,7 +128,7 @@
                             </well>
                         </items>
                     </multifieldwithbean>
-                    <!-- <nastedmultifield
+                    <nastedmultifield
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Nasted Multifield"
                         sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -199,7 +199,7 @@
                                 </items>
                             </well>
                         </items>
-                    </nastedmultifield> -->
+                    </nastedmultifield>
                 </items>
             </tabs>
         </items>

@@ -1,6 +1,7 @@
 package com.adobe.aem.guides.wknd.core.models.impl;
 
 import com.adobe.aem.guides.wknd.core.helper.MultifieldHelper;
+import com.adobe.aem.guides.wknd.core.helper.NastedHalper;
 // import com.aem.geeks.core.helper.MultifieldHelper;
 // import com.aem.geeks.core.helper.NastedHalper;
 import com.adobe.aem.guides.wknd.core.models.AuthorBooks;
@@ -96,30 +97,30 @@ public class AuthorBooksImpl implements AuthorBooks {
     }
 
 
-    // @Override
-    // public List<MultifieldHelper> getBookDetailsWithNastedMultifield() {
-    //     List<MultifieldHelper> bookDetailsNasted=new ArrayList<>();
-    //     try {
-    //         Resource bookDetailNasted=componentResource.getChild("bookdetailswithnastedmultifield");
-    //         if(bookDetailNasted!=null){
-    //             for (Resource bookNasted : bookDetailNasted.getChildren()) {
-    //                 MultifieldHelper multifieldHelper=new MultifieldHelper(bookNasted);
-    //                 if(bookNasted.hasChildren()){
-    //                     List<NastedHalper> bookNastedList=new ArrayList<>();
-    //                     Resource nastedResource=bookNasted.getChild("bookeditons");
-    //                     for(Resource nasted : nastedResource.getChildren()){
-    //                         bookNastedList.add(new NastedHalper(nasted));
-    //                     }
-    //                     multifieldHelper.setBookEditons(bookNastedList);
-    //                 }
-    //                 bookDetailsNasted.add(multifieldHelper);
-    //             }
-    //         }
-    //     }catch (Exception e){
-    //         LOG.info("\n ERROR while getting Book Details With Nasted Multifield {} ",e.getMessage());
-    //     }
-    //     LOG.info("\n SIZE Multifield {} ",bookDetailsNasted.size());
-    //     return bookDetailsNasted;
-    // }
+    @Override
+    public List<MultifieldHelper> getBookDetailsWithNastedMultifield() {
+        List<MultifieldHelper> bookDetailsNasted=new ArrayList<>();
+        try {
+            Resource bookDetailNasted=componentResource.getChild("bookdetailswithnastedmultifield");
+            if(bookDetailNasted!=null){
+                for (Resource bookNasted : bookDetailNasted.getChildren()) {
+                    MultifieldHelper multifieldHelper=new MultifieldHelper(bookNasted);
+                    if(bookNasted.hasChildren()){
+                        List<NastedHalper> bookNastedList=new ArrayList<>();
+                        Resource nastedResource=bookNasted.getChild("bookeditons");
+                        for(Resource nasted : nastedResource.getChildren()){
+                            bookNastedList.add(new NastedHalper(nasted));
+                        }
+                        multifieldHelper.setBookEditons(bookNastedList);
+                    }
+                    bookDetailsNasted.add(multifieldHelper);
+                }
+            }
+        }catch (Exception e){
+            LOG.info("\n ERROR while getting Book Details With Nasted Multifield {} ",e.getMessage());
+        }
+        LOG.info("\n SIZE Multifield {} ",bookDetailsNasted.size());
+        return bookDetailsNasted;
+    }
 
 }
