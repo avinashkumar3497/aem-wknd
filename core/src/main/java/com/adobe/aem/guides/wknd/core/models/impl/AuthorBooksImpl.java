@@ -1,5 +1,6 @@
 package com.adobe.aem.guides.wknd.core.models.impl;
 
+import com.adobe.aem.guides.wknd.core.helper.MultifieldHelper;
 // import com.aem.geeks.core.helper.MultifieldHelper;
 // import com.aem.geeks.core.helper.NastedHalper;
 import com.adobe.aem.guides.wknd.core.models.AuthorBooks;
@@ -72,24 +73,24 @@ public class AuthorBooksImpl implements AuthorBooks {
         return bookDetailsMap;
     }
 
-    // @Override
-    // public List<MultifieldHelper> getBookDetailsWithBean(){
-    //     List<MultifieldHelper> bookDetailsBean=new ArrayList<>();
-    //     try {
-    //         Resource bookDetailBean=componentResource.getChild("bookdetailswithbean");
-    //         if(bookDetailBean!=null){
-    //             for (Resource bookBean : bookDetailBean.getChildren()) {
-    //                 LOG.info("\n PATH Bean {} ",bookBean.getPath());
-    //                 LOG.info("\n BEAN PRO {} ",bookBean.getValueMap().get("bookname",String.class));
+    @Override
+    public List<MultifieldHelper> getBookDetailsWithBean(){
+        List<MultifieldHelper> bookDetailsBean=new ArrayList<>();
+        try {
+            Resource bookDetailBean=componentResource.getChild("bookdetailswithbean");
+            if(bookDetailBean!=null){
+                for (Resource bookBean : bookDetailBean.getChildren()) {
+                    LOG.info("\n PATH Bean {} ",bookBean.getPath());
+                    LOG.info("\n BEAN PRO {} ",bookBean.getValueMap().get("bookname",String.class));
 
-    //                 bookDetailsBean.add(new MultifieldHelper(bookBean));
-    //             }
-    //         }
-    //     }catch (Exception e){
-    //         LOG.info("\n ERROR while getting Book Details With Bean {} ",e.getMessage());
-    //     }
-    //     return bookDetailsBean;
-    // }
+                    bookDetailsBean.add(new MultifieldHelper(bookBean));
+                }
+            }
+        }catch (Exception e){
+            LOG.info("\n ERROR while getting Book Details With Bean {} ",e.getMessage());
+        }
+        return bookDetailsBean;
+    }
 
 
     // @Override

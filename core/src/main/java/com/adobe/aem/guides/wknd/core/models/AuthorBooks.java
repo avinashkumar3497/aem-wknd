@@ -1,9 +1,9 @@
 package com.adobe.aem.guides.wknd.core.models;
 
-// import com.aem.geeks.core.helper.MultifieldHelper;
-
 import java.util.List;
 import java.util.Map;
+
+import com.adobe.aem.guides.wknd.core.helper.MultifieldHelper;
 
 public interface AuthorBooks {
 
@@ -13,7 +13,7 @@ public interface AuthorBooks {
 
     List<Map<String,String>> getBookDetailsWithMap();
 
-    // List<MultifieldHelper> getBookDetailsWithBean();
+    List<MultifieldHelper> getBookDetailsWithBean();
 
     // List<MultifieldHelper> getBookDetailsWithNastedMultifield();
 }

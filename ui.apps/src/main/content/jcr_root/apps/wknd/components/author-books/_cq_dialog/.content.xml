@@ -78,7 +78,7 @@
                             </well>
                         </items>
                     </multifieldwithmap>
-                    <!-- <multifieldwithbean
+                    <multifieldwithbean
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Multifield With Bean"
                         sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -128,7 +128,7 @@
                             </well>
                         </items>
                     </multifieldwithbean>
-                    <nastedmultifield
+                    <!-- <nastedmultifield
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Nasted Multifield"
                         sling:resourceType="granite/ui/components/coral/foundation/container">
