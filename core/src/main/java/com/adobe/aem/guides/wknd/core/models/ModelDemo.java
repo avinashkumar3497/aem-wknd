@@ -1,5 +1,6 @@
 package com.adobe.aem.guides.wknd.core.models;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -14,6 +15,8 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.osgi.service.component.annotations.Activate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
@@ -46,9 +49,11 @@ public class ModelDemo {
         return name;
     }
 
-    @Activate
-    protected void activate(){
-        
+    private static final Logger LOG = LoggerFactory.getLogger(ModelDemo.class);
+
+    @PostConstruct
+    protected void init(){
+        LOG.info("ModelDemo model is fully constructed with all the values now");
     }
 
     public String getTitle(){
