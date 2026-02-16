@@ -1,1 +1,7 @@
-model demo Component created
+=======model demo Component=======
+<div data-sly-use.varName="${'com.adobe.aem.guides.wknd.core.models.ModelDemo' @ country='India'}">
+    <p><b>Name: </b>${varName.name}</p>
+    <p><b>Page Title: </b>${varName.title}</p>
+    <p><b>Page Title of "/content/wknd/us/en/about-us": </b>${varName.titleSpecific}</p>
+    <p><b>Country(rParameter): </b>${varName.country}</p>
+</div>
