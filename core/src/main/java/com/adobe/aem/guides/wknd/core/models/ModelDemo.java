@@ -1,5 +1,7 @@
 package com.adobe.aem.guides.wknd.core.models;
 
+import java.util.*;
+
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
@@ -71,5 +73,19 @@ public class ModelDemo {
     public String getCountry()
     {
         return country;
+    }
+
+    public List<String> getListOfStrings(){
+        List<String> l = new ArrayList<>();
+        Collections.addAll(l,"aaaa","bbbb","cccc");
+        return l;
+    }
+
+    public Map<String,String> getMapOfString(){
+        Map<String,String> map = new HashMap<>();
+        map.put("Bihar", "Patna");
+        map.put("UP", "Lacknow");
+        map.put("Rajasthan", "Jaipur");
+        return map;
     }
 }

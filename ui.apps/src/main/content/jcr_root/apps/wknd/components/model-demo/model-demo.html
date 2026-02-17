@@ -4,4 +4,12 @@
     <p><b>Page Title: </b>${varName.title}</p>
     <p><b>Page Title of "/content/wknd/us/en/about-us": </b>${varName.titleSpecific}</p>
     <p><b>Country(rParameter): </b>${varName.country}</p>
+    <p><b>List of Strings: </b><p>
+    <div data-sly-list.item="${varName.listOfStrings}">
+        ${item}
+    </div>
+    <p><b>Map of Strings</b></p>
+    <div data-sly-list.items="${varName.mapOfString}">
+        <p>${items}: ${varName.mapOfString[items]}</p>
+    </div>
 </div>

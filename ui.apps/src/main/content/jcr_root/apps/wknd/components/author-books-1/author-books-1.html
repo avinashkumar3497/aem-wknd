@@ -1,1 +1,8 @@
 AUTHOR BOOKS 1
+<div data-sly-use.varName="com.adobe.aem.guides.wknd.core.models.AuthorBooks1">
+    <p>${varName.authorName}</p>
+    <!--/* <p>Books: <span></span></p> */-->
+    <div data-sly-list.item="${varName.booksName}">
+        <p>${item}</p>
+    </div>
+</div>
