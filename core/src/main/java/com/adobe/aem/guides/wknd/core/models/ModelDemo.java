@@ -88,4 +88,18 @@ public class ModelDemo {
         map.put("Rajasthan", "Jaipur");
         return map;
     }
+
+    public List<Map<String,String>> getListOfMap(){
+        List l = new ArrayList<>();
+        Map<String,String> map = new HashMap<>();
+        map.put("bookname", "BookName1");
+        map.put("booksubject", "BookSubject1");
+        l.add(map);
+        Map<String,String> map1 = new HashMap<>();
+        map1.put("bookname", "BookName2");
+        map1.put("booksubject", "BookSubject2");
+        l.add(map1);
+        LOG.info("Testinggg: 1: {} | 2: {}",l.get(0).toString(),l.get(1).toString());
+        return l;
+    }
 }

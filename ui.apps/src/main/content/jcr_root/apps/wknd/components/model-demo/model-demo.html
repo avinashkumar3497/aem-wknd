@@ -5,13 +5,17 @@
     <p><b>Page Title of "/content/wknd/us/en/about-us": </b>${varName.titleSpecific}</p>
     <p><b>Country(rParameter): </b>${varName.country}</p>
     <p><b>List of Strings: </b><p>
-    <div data-sly-list.item="${varName.listOfStrings}">
-        ${item}
+    <div data-sly-repeat.item="${varName.listOfStrings @ begin=0,end=1}">
+        ${itemList.count} ${item}
     </div>
     <p><b>Map of Strings</b></p>
-    <div data-sly-list.items="${varName.mapOfString}">
+    <div data-sly-repeat.items="${varName.mapOfString}">
         <p>${items}: ${varName.mapOfString[items]}</p>
     </div>
     <p><b>Printing Capital of Rajasthan</b><p>
     <p>${varName.mapOfString.Rajasthan}</p>
+    <p><b>List of Map(String,String)</b></p>
+    <div data-sly-list.entry="${varName.listOfMap}">
+        <p>${entry.bookname} ${entry.booksubject}</p>
+    </div>
 </div>
