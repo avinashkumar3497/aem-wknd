@@ -1,8 +1,10 @@
-AUTHOR BOOKS 1
-<div data-sly-use.varName="com.adobe.aem.guides.wknd.core.models.AuthorBooks1">
+<div data-sly-use.lib="custom-text.html">
+    <div data-sly-call="${lib.bold @ value='AUTHOR BOOKS 1'}"></div>
+</div>
+<sly data-sly-use.varName="com.adobe.aem.guides.wknd.core.models.AuthorBooks1">
     <p>${varName.authorName}</p>
     <!--/* <p>Books: <span></span></p> */-->
     <div data-sly-list.item="${varName.booksName}">
         <p>${item}</p>
     </div>
-</div>
+</sly>
