@@ -23,11 +23,25 @@
                             <books
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
                                 fieldLabel="Author's Books">
                                 <field
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    name="./booksName"/>
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./bookDetails">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <bookName
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Book Name"
+                                            name="./bookName"/>
+                                        <bookSubject
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Book Subject"
+                                            name="./bookSubject"/>
+                                    </items>
+                                </field>
                             </books>
                         </items>
                     </multifield>
