@@ -1,7 +1,7 @@
 <div data-sly-use.lib="custom-text.html">
     <div data-sly-call="${lib.bold @ value='######AUTHOR BOOKS 1#######'}"></div>
 </div>
-<sly data-sly-use.varName="com.adobe.aem.guides.wknd.core.models.AuthorBooks1">
+<sly data-sly-use.varName="${'com.adobe.aem.guides.wknd.core.models.AuthorBooks1' @ passingValue='VAAAAAALLLLLLLLLUUUUUUEE'}">
     <p><b>Author Name:</b> ${varName.authorName}</p>
     <!--/* <p>Books: <span></span></p> */-->
     <!-- <div data-sly-list.item="${varName.booksName}">
@@ -11,6 +11,9 @@
     <sly data-sly-list.items="${varName.booksDetails}">
         <b>Book ${itemsList.count}: </b>
         <p>Book Name: ${items.bookName}</p>
-        <p>Book Subject: ${items.bookSubject}</p><br>
+        <p>Number of Copies: ${items.copies}</p><br>
     </sly>
+
+    ${varName.reqAttribute}
+
 </sly>

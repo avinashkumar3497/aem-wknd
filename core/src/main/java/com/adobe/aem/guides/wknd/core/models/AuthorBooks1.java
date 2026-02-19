@@ -8,13 +8,19 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Required;
+import org.apache.sling.models.annotations.Via;
+import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
 import org.apache.sling.models.annotations.injectorspecific.Self;
+
+import com.adobe.aem.guides.wknd.core.helper.MultifieldHelper1;
 
 @Model(
     adaptables = Resource.class
@@ -23,6 +29,9 @@ public class AuthorBooks1 {
     
     @Self
     Resource resource;
+
+    // @Self
+    // SlingHttpServletRequest request;
 
     @Inject
     @Default(values = "Default Value")
@@ -37,20 +46,33 @@ public class AuthorBooks1 {
     // @Inject
     // List<String> booksName;
 
-    public List<Map<String,String>> getBooksDetails(){
-        List<Map<String,String>> l = new ArrayList<>();
-        Resource multifieldNodeResource = resource.getChild("booksDetails");
+    public List<MultifieldHelper1> getBooksDetails(){
+        List<MultifieldHelper1> l = new ArrayList<>();
+        Resource multifieldNodeResource = resource.getChild("bookDetails");
         // Iterator<Resource> itr  = multifieldNodeResource.getChildren().iterator();
         // while(itr.hasNext()){
         //     l.add(itr.next().getValueMap().get("booksName",String.class));
         // }
         for(Resource entryNode: multifieldNodeResource.getChildren()){
-            Map<String,String> map;
-            map = new HashMap<>();
-            map.put("bookName", entryNode.getValueMap().get("bookName", String.class));
-            map.put("bookSubject", entryNode.getValueMap().get("bookSubject", String.class));
-            l.add(map);
+            // Map<String,String> map;
+            // map = new HashMap<>();
+            // map.put("bookName", entryNode.getValueMap().get("bookName", String.class));
+            // map.put("bookSubject", entryNode.getValueMap().get("bookSubject", String.class));
+            // l.add(map);
+            l.add(new MultifieldHelper1(entryNode));
         }
         return l;
     }
+
+    // private String reqAttString;
+
+    // public String getReqAttribute() {
+    //     return reqAttString;
+    // }
+
+    // @PostConstruct
+    // protected void init(){
+    //     reqAttString = (String)request.getAttribute("passingValue");
+    // }
+
 }
