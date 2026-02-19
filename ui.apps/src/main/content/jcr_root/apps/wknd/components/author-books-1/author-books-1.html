@@ -7,5 +7,10 @@
     <!-- <div data-sly-list.item="${varName.booksName}">
         <p>${item}</p>
     </div> -->
-    <p>Books: ${varName.booksName @join=', '}</p>
+    <!--/* <p>Books: ${varName.booksName @join=', '}</p> */-->
+    <sly data-sly-list.items="${varName.booksDetails}">
+        <b>Book ${itemsList.count}: </b>
+        <p>Book Name: ${items.bookName}</p>
+        <p>Book Subject: ${items.bookSubject}</p><br>
+    </sly>
 </sly>

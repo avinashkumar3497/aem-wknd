@@ -3,8 +3,10 @@ package com.adobe.aem.guides.wknd.core.models;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -35,12 +37,19 @@ public class AuthorBooks1 {
     // @Inject
     // List<String> booksName;
 
-    public List<String> getBooksName(){
-        List<String> l = new ArrayList<>();
-        Resource multifieldNodeResource = resource.getChild("booksName");
-        Iterator<Resource> itr  = multifieldNodeResource.getChildren().iterator();
-        while(itr.hasNext()){
-            l.add(itr.next().getValueMap().get("booksName",String.class));
+    public List<Map<String,String>> getBooksDetails(){
+        List<Map<String,String>> l = new ArrayList<>();
+        Resource multifieldNodeResource = resource.getChild("booksDetails");
+        // Iterator<Resource> itr  = multifieldNodeResource.getChildren().iterator();
+        // while(itr.hasNext()){
+        //     l.add(itr.next().getValueMap().get("booksName",String.class));
+        // }
+        for(Resource entryNode: multifieldNodeResource.getChildren()){
+            Map<String,String> map;
+            map = new HashMap<>();
+            map.put("bookName", entryNode.getValueMap().get("bookName", String.class));
+            map.put("bookSubject", entryNode.getValueMap().get("bookSubject", String.class));
+            l.add(map);
         }
         return l;
     }
