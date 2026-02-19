@@ -19,7 +19,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                 fieldLabel="Author Name"
-                                name="authorName"/>
+                                name="./authorName"/>
                             <books
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
@@ -27,7 +27,7 @@
                                 <field
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    name="./books-name"/>
+                                    name="./booksName"/>
                             </books>
                         </items>
                     </multifield>
