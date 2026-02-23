@@ -6,12 +6,14 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Required;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
@@ -20,6 +22,9 @@ import org.osgi.service.component.annotations.Activate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.adobe.aem.guides.wknd.core.services.DemoService1;
+import com.adobe.aem.guides.wknd.core.services.DemoServiceB;
+import com.adobe.aem.guides.wknd.core.services.MultiService;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 
@@ -102,4 +107,25 @@ public class ModelDemo {
         LOG.info("Testinggg: 1: {} | 2: {}",l.get(0).toString(),l.get(1).toString());
         return l;
     }
+
+    private String testService;
+
+    @OSGiService
+    private DemoServiceB demoService1;
+
+    // public String getTestService() {
+    //     return demoService1.show();
+    // }
+
+    public List<String> getPages() throws LoginException{
+        return demoService1.getPages();
+    }
+
+    @OSGiService(filter = "(component.name=com.adobe.aem.guides.wknd.core.services.impl.MultiServiceB)")
+    MultiService multiService;
+
+    public String getMultiServiceText(){
+        return multiService.show();
+    }
+
 }

@@ -17,16 +17,22 @@ import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Required;
 import org.apache.sling.models.annotations.Via;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
 import org.apache.sling.models.annotations.injectorspecific.Self;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.adobe.aem.guides.wknd.core.helper.MultifieldHelper1;
+import com.adobe.aem.guides.wknd.core.services.DemoService1;
 
 @Model(
     adaptables = Resource.class
 )
 public class AuthorBooks1 {
     
+    private static final Logger LOG = LoggerFactory.getLogger(AuthorBooks1.class);
+
     @Self
     Resource resource;
 
@@ -64,15 +70,13 @@ public class AuthorBooks1 {
         return l;
     }
 
-    // private String reqAttString;
-
-    // public String getReqAttribute() {
-    //     return reqAttString;
-    // }
-
-    // @PostConstruct
-    // protected void init(){
-    //     reqAttString = (String)request.getAttribute("passingValue");
-    // }
+   @PostConstruct
+    protected void init(){
+        LOG.trace("Logger Demo: trace");
+        LOG.debug("Logger Demo: debug");
+        LOG.info("Logger Demo: info");
+        LOG.warn("Logger Demo: warn");
+        LOG.error("Logger Demo: error");
+    }
 
 }
