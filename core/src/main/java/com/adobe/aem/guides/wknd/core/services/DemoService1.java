@@ -30,7 +30,7 @@ import com.day.cq.wcm.api.PageManager;
     service = DemoService1.class,
     immediate = true
 )
-@Designate(ocd = com.adobe.aem.guides.wknd.core.config.DemoConfig1.class)
+@Designate(ocd = com.adobe.aem.guides.wknd.core.config.DemoConfig1.class,factory = true)
 public class DemoService1 {
     
     private static final Logger LOG = LoggerFactory.getLogger(DemoService1.class);

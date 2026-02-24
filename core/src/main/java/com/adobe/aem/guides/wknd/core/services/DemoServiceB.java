@@ -8,6 +8,8 @@ import org.apache.sling.api.resource.LoginException;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.propertytypes.ServiceRanking;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.day.cq.wcm.api.Page;
 
@@ -29,4 +31,11 @@ public class DemoServiceB {
         }
         return l;
     }
+
+    private static final Logger LOG = LoggerFactory.getLogger(DemoServiceB.class);
+
+    // @Reference
+    // protected void bindDemoService1(){
+    //     LOG.info("bindDemoService1: DemoService1 is now available to be used in DemoServiceB");
+    // }
 }

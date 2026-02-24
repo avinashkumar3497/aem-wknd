@@ -1,11 +1,13 @@
 {
-  "boool":false,
+  "boool":true,
   "show":"Hiiiiiiii Broooooo",
   "coutries":[
     "fr",
     "in",
-    "us"
+    "us",
+    "cn",
+    "kr"
   ],
-  "number:Integer":10,
+  "number:Integer":100,
   "flavour":"vanilla"
 }
