@@ -1,0 +1,11 @@
+{
+  "boool":false,
+  "show":"Hiiiiiiii Broooooo",
+  "coutries":[
+    "fr",
+    "in",
+    "us"
+  ],
+  "number:Integer":10,
+  "flavour":"vanilla"
+}

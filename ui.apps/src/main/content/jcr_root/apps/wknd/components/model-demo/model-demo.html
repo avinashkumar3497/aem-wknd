@@ -1,5 +1,6 @@
 =======model demo Component=======
 <div data-sly-use.varName="${'com.adobe.aem.guides.wknd.core.models.ModelDemo' @ country='India'}">
+    <p>Value of show from DemoConfig1: ${varName.showConfig}</p>
     <p>${varName.multiServiceText}</p>
     <sly data-sly-list.item="${varName.pages}">
         ${item}

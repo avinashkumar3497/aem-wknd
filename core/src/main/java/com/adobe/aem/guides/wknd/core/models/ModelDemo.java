@@ -128,4 +128,11 @@ public class ModelDemo {
         return multiService.show();
     }
 
+    @OSGiService
+    DemoService1 dService1;
+
+    public String getShowConfig(){
+        return dService1.getShowConfig();
+    }
+
 }
