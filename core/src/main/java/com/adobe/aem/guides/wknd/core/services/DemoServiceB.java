@@ -20,8 +20,8 @@ import com.day.cq.wcm.api.Page;
 @ServiceRanking(1005)
 public class DemoServiceB {
 
-    @Reference
-    DemoService1 demoService1;
+    
+    private DemoService1 demoService1;
 
     public List<String> getPages() throws LoginException{
         Iterator<Page> itr = demoService1.getPages();
@@ -34,8 +34,9 @@ public class DemoServiceB {
 
     private static final Logger LOG = LoggerFactory.getLogger(DemoServiceB.class);
 
-    // @Reference
-    // protected void bindDemoService1(){
-    //     LOG.info("bindDemoService1: DemoService1 is now available to be used in DemoServiceB");
-    // }
+    @Reference
+    protected void bindDemoService1(DemoService1 demoService1){
+        this.demoService1=demoService1;
+        LOG.info("bindDemoService1: DemoService1 is now available to be used in DemoServiceB");
+    }
 }
