@@ -37,10 +37,10 @@ import java.io.IOException;
  * idempotent. For write operations use the {@link SlingAllMethodsServlet}.
  */
 @Component(service = { Servlet.class })
-@SlingServletResourceTypes(
-        resourceTypes="wknd/components/page",
-        methods=HttpConstants.METHOD_GET,
-        extensions="txt")
+// @SlingServletResourceTypes(
+//         resourceTypes="wknd/components/page",
+//         methods=HttpConstants.METHOD_GET,
+//         extensions="txt")
 @ServiceDescription("Simple Demo Servlet")
 public class SimpleServlet extends SlingSafeMethodsServlet {
 
@@ -50,7 +50,9 @@ public class SimpleServlet extends SlingSafeMethodsServlet {
     protected void doGet(final SlingHttpServletRequest req,
             final SlingHttpServletResponse resp) throws ServletException, IOException {
         final Resource resource = req.getResource();
-        resp.setContentType("text/plain");
-        resp.getWriter().write("Title = " + resource.getValueMap().get(JcrConstants.JCR_TITLE));
+        // resp.setContentType("text/plain");
+        // resp.getWriter().write("Title = " + resource.getValueMap().get(JcrConstants.JCR_TITLE));
+        resp.setContentType("application/json");
+        resp.getWriter().write("{\"message\":\"Hello from servlet\"}");
     }
 }
