@@ -22,7 +22,8 @@ import org.slf4j.LoggerFactory;
         "sling.servlet.selectors=test",
         "sling.servlet.extensions=json",
         "sling.servlet.extensions=myjson",
-        "sling.servlet.methods="+HttpConstants.METHOD_POST
+        "sling.servlet.methods="+HttpConstants.METHOD_POST,
+        "sling.servlet.methods="+HttpConstants.METHOD_GET
     }
 )
 public class WKNDResourceTypesServlet extends SlingAllMethodsServlet {
