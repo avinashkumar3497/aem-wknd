@@ -27,14 +27,14 @@ public class WKNDScheduler implements Job {
     @Activate
     protected void activate(){
 
-        ScheduleOptions in=scheduler.EXPR("0/4 * * * * ?");
+        ScheduleOptions in=scheduler.EXPR("0 0/10 * * * ?");
         in.name("com.adobe.aem.guides.wknd.core.schedulers.WKNDScheduler.in");
         Map<String,Serializable> inMap = new HashMap<>();
         inMap.put("country","INDIA");
         in.config(inMap);
         scheduler.schedule(this, in);
 
-        ScheduleOptions us=scheduler.EXPR("0/2 * * * * ?");
+        ScheduleOptions us=scheduler.EXPR("0 0/5 * * * ?");
         us.name("com.adobe.aem.guides.wknd.core.schedulers.WKNDScheduler.us");
         Map<String,Serializable> usMap = new HashMap<>();
         usMap.put("country","USA");

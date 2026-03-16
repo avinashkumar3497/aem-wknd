@@ -1,0 +1,7 @@
+<sly data-sly-use.lib="/apps/wknd/components/templates/custom-text.html">
+    <div data-sly-call="${lib.bold @ value='Medical Providers:'}">
+</sly>
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.ProviderModel">
+<sly data-sly-list.item="${model.providedData}">
+    <p>${item}</p>
+</sly>
