@@ -1,0 +1,5 @@
+<sly data-sly-template.schoolBooks="${@ books}">
+    <sly data-sly-list.item="${books.bookNames}">
+        <p>${item.bookname}: ${item.subjectname}</p>
+    </sly>
+</sly>

@@ -1,7 +1,23 @@
 <h3>Model Demo 1</h3>
 <sly data-sly-use.model="${'com.adobe.aem.guides.wknd.core.models.ModelDemo1' @ rAttr = 'lalala'}">
-<p>Name: ${model.name}</p>
-<p>Score: ${model.score}</p>
-<p>Title: ${model.title}</p>
-<p>Req Attr: ${model.reqAttribute}
+    <p>Name: ${model.name}</p>
+    <p>Score: ${model.score}</p>
+    <p>Title: ${model.title}</p>
+    <p>Req Attr: ${model.reqAttribute}
+    <sly data-sly-list.item="${model.books @ begin = 1, end = 2}">
+        <p>${item} (index:${itemList.index}, count:${itemList.count})</p>
+    </sly>
+    <p>Marks:</p>
+    <sly data-sly-list.item="${model.marks}">
+        <p>${item}: ${model.marks.hindi}</p>
+    </sly>
+
+    <h4>Book Names:</h4>
+    <!-- <sly data-sly-list.item="${model.bookNames}">
+        <p><b>${item.bookname}: </b>${item.subjectname}</p>
+    </sly> -->
+    <sly data-sly-use.temp="print-books.html">
+        <sly data-sly-call="${temp.schoolBooks @ books = model}">
+    </sly>
+
 </sly>
