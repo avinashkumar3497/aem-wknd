@@ -1,0 +1,17 @@
+<h3> Author Books 2</h3>
+<sly data-sly-use.model="${'com.adobe.aem.guides.wknd.core.models.AuthorBooks2' @ retr = 'india'}">
+    <p>r attr: ${model.rtr}</p>
+    <p><b>Author Name: </b>${model.authorName}</p>
+    <p><b>Books:</b></p>
+    <sly data-sly-list.item="${model.books}">
+        <p>${item}</p>
+    </sly>
+
+    <sly data-sly-list.item="${model.bookDetails}">
+        <p>------------${itemList.count}-------------</p>
+        <p><b>Book Name: </b>${item.bookname}</p>
+        <p><b>Book Publisher: </b>${item.bookpublisher}</p>
+        <p><b>Book Copies: </b>${item.copies}</p>
+    </sly>
+
+</sly>
