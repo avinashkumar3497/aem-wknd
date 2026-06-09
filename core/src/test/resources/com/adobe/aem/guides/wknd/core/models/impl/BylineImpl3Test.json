@@ -1,0 +1,6 @@
+{
+    "byline-3": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/content/byline"
+    }
+}
