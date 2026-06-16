@@ -74,7 +74,11 @@ public class ModelDemoImpl1 implements ModelDemo1{
 
     @PostConstruct
     protected void constructed(){
-        LOG.info("ModelDemo1 model is constructed");
+        LOG.trace("trace: ModelDemo1 model is constructed");
+        LOG.debug("debug: ModelDemo1 model is constructed");
+        LOG.info("info: ModelDemo1 model is constructed");
+        LOG.warn("warn: ModelDemo1 model is constructed");
+        LOG.error("error: ModelDemo1 model is constructed");
     }
 
     @Override
