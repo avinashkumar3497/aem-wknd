@@ -18,10 +18,10 @@ import org.slf4j.LoggerFactory;
 @Component(service = Servlet.class,
     property = {
         "sling.servlet.resourceTypes=core/wcm/components/page/v3/page",
-        "sling.servlet.selectors=geeks",
-        "sling.servlet.selectors=test",
-        "sling.servlet.extensions=json",
-        "sling.servlet.extensions=myjson",
+        // "sling.servlet.selectors=geeks",
+        // "sling.servlet.selectors=test",
+        // "sling.servlet.extensions=json",
+        // "sling.servlet.extensions=myjson",
         "sling.servlet.methods="+HttpConstants.METHOD_POST,
         "sling.servlet.methods="+HttpConstants.METHOD_GET
     }
