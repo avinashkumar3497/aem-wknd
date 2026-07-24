@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Process"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    mode="edit">
+    <content
+        granite:class="wf_process_step_dialog"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+        <items jcr:primaryType="nt:unstructured">
+            <common
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Common"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
+            <process
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Process"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
+            <config
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Priority"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <priority
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Review Priority"
+                        name="./metaData/reviewPriority">
+                        <items jcr:primaryType="nt:unstructured">
+                            <high
+                                jcr:primaryType="nt:unstructured"
+                                text="High"
+                                value="high"/>
+                            <medium
+                                jcr:primaryType="nt:unstructured"
+                                text="Medium"
+                                value="medium"/>
+                            <low
+                                jcr:primaryType="nt:unstructured"
+                                text="Low"
+                                value="low"/>
+                        </items>
+                    </priority>
+                    <dueInDays
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                        fieldLabel="Due in (days)"
+                        name="./metaData/dueInDays"/>
+                </items>
+            </config>
+        </items>
+    </content>
+</jcr:root>
