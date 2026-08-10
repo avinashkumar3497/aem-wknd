@@ -1,0 +1,7 @@
+<template data-sly-template.card="${@ item}">
+<li class="cmp-resources__item" data-sly-test="${item.fileReference}">
+    <h3 class="cmp-resources__title">${item.resourceTitle}</h3>
+    <p class="cmp-resources__description">${item.description}</p>
+    <a class="cmp-resources__link" download href="${item.fileReference}">Download PDF</a>
+</li>
+</template>

@@ -1,0 +1,6 @@
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.FeaturedResourcesModel" data-sly-use.tpl="resource-card.html"/>
+<div data-sly-test="${model.resources}" class="cmp-resources">
+    <ul class="cmp-resources__list" data-sly-list.item="${model.resources}">
+        <sly data-sly-call="${tpl.card @ item=item}"/>
+    </ul>
+</div>

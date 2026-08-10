@@ -1,0 +1,49 @@
+// ---- 1. Variables (design tokens) ----
+$card-border:      #e1e1e1;
+$card-radius:      8px;
+$card-gap:         16px;
+$title-color:      #1473e6;
+$text-color:       #333333;
+$link-color:       #1473e6;
+
+// ---- 2. BEM block ----
+.cmp-resources {
+
+    &__list {
+        list-style: none;          // remove <ul> bullets
+        margin: 0;
+        padding: 0;
+        display: grid;             // simple vertical stack of cards
+        gap: $card-gap;
+    }
+
+    &__item {
+        border: 1px solid $card-border;
+        border-radius: $card-radius;
+        padding: $card-gap;
+    }
+
+    &__title {
+        color: $title-color;
+        margin: 0 0 8px;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    &__description {
+        color: $text-color;
+        margin: 0 0 12px;
+        line-height: 1.5;
+    }
+
+    &__link {
+        display: inline-block;
+        color: $link-color;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;   // small interaction feedback
+        }
+    }
+}
