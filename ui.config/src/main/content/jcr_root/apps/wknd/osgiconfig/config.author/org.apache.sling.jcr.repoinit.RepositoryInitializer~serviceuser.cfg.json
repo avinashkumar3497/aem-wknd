@@ -1,0 +1,6 @@
+{
+  "scripts": [
+    "create service user es-crawl-service-user",
+    "set ACL on /content/wknd\n allow jcr:read for es-crawl-service-user\nend"
+  ]
+}

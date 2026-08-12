@@ -1,0 +1,5 @@
+{
+  "user.mapping":[
+    "aem-guides-wknd.core:es-crawl-user=es-crawl-service-user"
+  ]
+}
