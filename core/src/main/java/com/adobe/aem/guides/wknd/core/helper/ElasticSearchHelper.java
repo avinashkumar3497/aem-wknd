@@ -64,6 +64,7 @@ public class ElasticSearchHelper {
         Resource jcrContentNode = page.getChild("jcr:content");
         if(jcrContentNode==null) return false;
         ValueMap valueMap = jcrContentNode.getValueMap();
+        //TODO:check if the node is a page or not. and if there is a property called cq:template or not
         String pageTemplate = valueMap.get("cq:template", String.class);
         return cfg.getAllowedTemplates()!=null && Arrays.asList(cfg.getAllowedTemplates()).contains(pageTemplate);
     }
