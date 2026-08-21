@@ -1,0 +1,6 @@
+{
+  "scripts": [
+    "create service user workflow-poc-service",
+    "set ACL on /content\n  allow jcr:read for workflow-poc-service\n  allow crx:replicate for workflow-poc-service\nend"
+  ]
+}

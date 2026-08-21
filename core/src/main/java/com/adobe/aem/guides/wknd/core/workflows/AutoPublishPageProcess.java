@@ -1,12 +1,26 @@
 package com.adobe.aem.guides.wknd.core.workflows;
 
+import java.util.Map;
+
+import javax.jcr.Session;
+
+import org.apache.sling.api.adapter.Adaptable;
+import org.apache.sling.api.resource.LoginException;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.adobe.granite.workflow.WorkflowException;
 import com.adobe.granite.workflow.WorkflowSession;
 import com.adobe.granite.workflow.exec.WorkItem;
 import com.adobe.granite.workflow.exec.WorkflowProcess;
 import com.adobe.granite.workflow.metadata.MetaDataMap;
+import com.day.cq.replication.ReplicatedAction;
+import com.day.cq.replication.ReplicationActionType;
+import com.day.cq.replication.Replicator;
 
 @Component(
     service = WorkflowProcess.class,
@@ -14,15 +28,33 @@ import com.adobe.granite.workflow.metadata.MetaDataMap;
 )
 public class AutoPublishPageProcess implements WorkflowProcess{
 
+    private static final Logger LOG = LoggerFactory.getLogger(AutoPublishPageProcess.class);
+    
+    @Reference
+    private ResourceResolverFactory resolverFactory;
 
+    @Reference
+    private Replicator replicator;
 
     @Override
-    public void execute(WorkItem item, WorkflowSession session, MetaDataMap args) throws WorkflowException {
+    public void execute(WorkItem item, WorkflowSession workflowSession, MetaDataMap args) throws WorkflowException {
         //WorkItem = current step (gateway to payload + instance)
         //WorkflowSession adapts to a JCR session for the workflow user, but privileged actions like replication should use a service resource resolver
         //MetaDataMap exposes step config incl. PROCESS_ARGS
-        
-
+        String payloadPath = item.getWorkflowData().getPayload().toString();
+        String payloadType = item.getWorkflowData().getPayloadType();
+        LOG.info("payloadPath: {}",payloadPath);
+        if(payloadType.equals("JCR_PATH")){
+            try(ResourceResolver resolver = resolverFactory.getServiceResourceResolver(Map.of(resolverFactory.SUBSERVICE,"workflow-poc-service"))) {
+                Session session = resolver.adaptTo(Session.class);
+                replicator.replicate(session, ReplicationActionType.ACTIVATE, payloadPath);
+            } catch (Exception e) {
+                throw new WorkflowException("exception occured while replicating payload",e);
+            }
+        }
+        else{
+            throw new WorkflowException("payloadType is invalid:"+payloadType);
+        }
     }
 
 }
