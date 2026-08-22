@@ -43,8 +43,24 @@ public class AutoPublishPageProcess implements WorkflowProcess{
         //MetaDataMap exposes step config incl. PROCESS_ARGS
         String payloadPath = item.getWorkflowData().getPayload().toString();
         String payloadType = item.getWorkflowData().getPayloadType();
+        String action = "ACTIVATE";
+        String processArgs = args.get("PROCESS_ARGS",String.class);
+        if(processArgs!=null && processArgs.startsWith("action=")){
+            action = processArgs.substring("action=".length()).trim();
+        }
+
+        ReplicationActionType actionType;
+
+        if ("ACTIVATE".equalsIgnoreCase(action)) {
+            actionType = ReplicationActionType.ACTIVATE;
+        } else if ("DEACTIVATE".equalsIgnoreCase(action)) {
+            actionType = ReplicationActionType.DEACTIVATE;
+        } else {
+            throw new WorkflowException("Unsupported replication action: " + action);
+        }
+        
         LOG.info("payloadPath: {}",payloadPath);
-        if(payloadType.equals("JCR_PATH")){
+        if("JCR_PATH".equals(payloadType)){
             try(ResourceResolver resolver = resolverFactory.getServiceResourceResolver(Map.of(resolverFactory.SUBSERVICE,"workflow-poc-service"))) {
                 Session session = resolver.adaptTo(Session.class);
                 replicator.replicate(session, ReplicationActionType.ACTIVATE, payloadPath);

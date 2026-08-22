@@ -17,8 +17,7 @@ import com.adobe.granite.workflow.metadata.MetaDataMap;
 public class WorkflowInitiatorParticipantChooser implements ParticipantStepChooser{
 
     @Override
-    public String getParticipant(WorkItem workItem, WorkflowSession workflowSession, MetaDataMap args)
-            throws WorkflowException {
+    public String getParticipant(WorkItem workItem, WorkflowSession workflowSession, MetaDataMap args) {
         return workItem.getWorkflow().getInitiator();
     }
 
