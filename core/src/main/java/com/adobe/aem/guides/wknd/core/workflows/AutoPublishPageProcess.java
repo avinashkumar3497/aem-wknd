@@ -22,6 +22,14 @@ import com.day.cq.replication.ReplicatedAction;
 import com.day.cq.replication.ReplicationActionType;
 import com.day.cq.replication.Replicator;
 
+//This class is for the custom workflow process
+//It takes the payload from the workitem and replicates it.
+//it checks for process args for the action(ACTIVATE/DEACTIVATE)
+//throws WOrkflowExcption if action if the provided replication action unsupported
+
+//Unit Testing - check if replicate method was called with valid action
+//check for default ReplicationActionType if we dont pass any args in process step
+
 @Component(
     service = WorkflowProcess.class,
     property = {"process.label=AutoPublishPageProcess"}
@@ -63,7 +71,7 @@ public class AutoPublishPageProcess implements WorkflowProcess{
         if("JCR_PATH".equals(payloadType)){
             try(ResourceResolver resolver = resolverFactory.getServiceResourceResolver(Map.of(resolverFactory.SUBSERVICE,"workflow-poc-service"))) {
                 Session session = resolver.adaptTo(Session.class);
-                replicator.replicate(session, ReplicationActionType.ACTIVATE, payloadPath);
+                replicator.replicate(session, actionType, payloadPath);
             } catch (Exception e) {
                 throw new WorkflowException("exception occured while replicating payload",e);
             }
