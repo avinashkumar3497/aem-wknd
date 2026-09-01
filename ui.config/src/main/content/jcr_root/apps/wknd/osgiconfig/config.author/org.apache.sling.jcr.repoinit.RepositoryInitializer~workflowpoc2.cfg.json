@@ -1,0 +1,5 @@
+{
+  "scripts": [
+    "# ===== Workflow POC2: sample approver group + test user =====\n\n# Create a test approver user\ncreate user approver-user with password approver-user\n\n# Create the approver group (name must match ^gsk-cf-.*approvers$)\ncreate group gsk-cf-medicalaffairs-approvers with path /home/groups/wknd\n\n# Add the test user to the approver group\nadd approver-user to group gsk-cf-medicalaffairs-approvers\n\n# ===== Task 4: grant replication privilege on test content =====\n\n# Ensure the content path exists before setting ACL on it\ncreate path /content/wknd/us/en(nt:unstructured)\n\n# Grant crx:replicate so the chooser can resolve this group\nset ACL for gsk-cf-medicalaffairs-approvers\n allow crx:replicate on /content/wknd/us/en\nend"
+  ]
+}

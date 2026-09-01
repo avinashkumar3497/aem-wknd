@@ -36,7 +36,7 @@ public class PermissionBasedParticipantGroup implements ParticipantStepChooser {
     private static final Logger LOG = LoggerFactory.getLogger(PermissionBasedParticipantGroup.class);
 
     /** Approver groups must match this naming convention. */
-    private static final Pattern APPROVER_GROUP_PATTERN = Pattern.compile("^wknd-.*approvers$");
+    private static final Pattern APPROVER_GROUP_PATTERN = Pattern.compile("^gsk-cf-.*approvers$");
 
     /** Approver groups must hold this privilege on the payload path. */
     private static final String APPROVER_PRIVILEGE = "crx:replicate";
