@@ -1,0 +1,8 @@
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.Testimonial"/>
+data-sly-use.placeHolderTemplate="core/wcm/components/commons/v1/templates.html">
+<div data-sly-test.hasContent="${model.hasContent}"
+class="cmp-testimonial cmp-testimonial--${model.layout}">
+    <img src="${model.authorImage}" alt="${model.authorName}" data-sly-test="${model.authorImage}" />
+    <p data-sly-test.rating="${model.showRating}">Rating: ${rating}</p>
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>

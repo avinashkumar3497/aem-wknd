@@ -1,6 +1,7 @@
 package com.adobe.aem.guides.wknd.core.servlets;
 
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.Servlet;
 
@@ -8,6 +9,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.propertytypes.ServiceDescription;
@@ -52,5 +54,17 @@ public class PageInfoJsonServlet extends SlingSafeMethodsServlet{
         } catch (IOException e) {
             LOG.error(e.getMessage(),e);
         } 
+//         Obtains the service resolver
+// Reads /content/products/product-a
+// Closes the resolver correctly
+// Handles LoginException
+
+// try(ResourceResolver resolver = resolverFactory.getServiceResourceResolver(Map.of(ResourceResolverFactory.SUBSERVICE,"myapp-product-reader"))){
+//     resolver.getResource("/content/products/product-a");
+// }
+// catch(Exception e){
+//     LOG.error("Login Eexcption occured while reading product: {}",e);
+// }
+
     }
 }
