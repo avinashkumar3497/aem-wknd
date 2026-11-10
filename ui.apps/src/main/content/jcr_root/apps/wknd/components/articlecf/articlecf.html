@@ -1,0 +1,8 @@
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.ArticleCFReaderModel"
+    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"></sly>
+<div data-sly-test.hasContent="${model.hasContent}"
+    class="cmp-articlecf">
+    <p class="cmp-articlecf__fragmentPath">${model.fragmentPath}</p>
+    <p class="cmp-articlecf__variationName">${model.variationName}</p>
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
