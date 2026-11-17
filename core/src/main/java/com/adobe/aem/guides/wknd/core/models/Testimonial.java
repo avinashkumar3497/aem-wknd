@@ -41,4 +41,8 @@ public class Testimonial {
     public boolean hasContent(){
         return true; //needs to bereplaced with the actual code to determine the emptyness
     }
+    public Integer getMaxQuoteLength() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getMaxQuoteLength'");
+    }
 }

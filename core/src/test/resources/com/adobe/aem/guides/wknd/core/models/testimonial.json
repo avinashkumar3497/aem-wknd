@@ -1,0 +1,18 @@
+{
+  "full": {
+	"jcr:primaryType": "nt:unstructured",
+	"quote": "<p>Great service</p>",
+	"authorName": "Avinash",
+	"layout": "center",
+	"showRating": true
+  },
+  "noLayout": {
+	"jcr:primaryType": "nt:unstructured",
+	"quote": "<p>Nice</p>",
+	"authorName": "Ravi"
+  },
+  "emptyQuote": {
+	"jcr:primaryType": "nt:unstructured",
+	"authorName": "Sam"
+  }
+}
